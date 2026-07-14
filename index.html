@@ -27,7 +27,7 @@
 <div class="actions"><button id="submitBtn" type="submit">ส่งแบบสอบถาม</button><div class="loading" id="loading">กำลังส่งข้อมูล...</div><div id="statusBox" class="status"></div></div>
 </form></main>
 <script>
-const LIFF_ID="2010668765-5SJJLNTn";const API_URL="https://defaultf2fda5e72ea1450d9fc12af5f86300.95.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/02/workflows/94a8ae9703b54ca78deb2b64432da87d/triggers/manual/paths/invoke?api-version=1";
+const LIFF_ID="2010668765-5SJJLNTn";const API_URL="https://defaultf2fda5e72ea1450d9fc12af5f86300.95.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/02/workflows/94a8ae9703b54ca78deb2b64432da87d/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=D2EVugoJoucfhSOxZH-pd9SPBMgSTyP5vV9CjtMWMGI";
 const banks=["ธนาคารกรุงเทพ (BBL)","ธนาคารกสิกรไทย (KBANK)","ธนาคารกรุงไทย (KTB)","ธนาคารทหารไทยธนชาต (TTB)","ธนาคารไทยพาณิชย์ (SCB)","ธนาคารกรุงศรีอยุธยา (BAY)","ธนาคารยูโอบี (UOB)","ธนาคารออมสิน (GSB)","ธนาคารซีไอเอ็มบีไทย (CIMB)","ธนาคารเกียรตินาคินภัทร (KKP)","ธนาคารซูมิโตโม มิตซุย แบงกิ้ง คอร์ปอเรชั่น (SMBC)","ธนาคารเอชเอสบีซี (HSBC)","ธนาคารแห่งอเมริกา (BOA)","Other"];
 const v=id=>document.getElementById(id).value.trim();const radio=n=>document.querySelector(`input[name="${n}"]:checked`)?.value||"";const checks=n=>[...document.querySelectorAll(`input[name="${n}"]:checked`)].map(x=>x.value);
 function renderBanks(){bankChoices.innerHTML=banks.map(b=>`<label class="choice"><input type="checkbox" name="banks" value="${b}"><span>${b}</span></label>`).join("");bankChoices.addEventListener("change",()=>{bankOtherWrap.style.display=checks("banks").includes("Other")?"block":"none";progress()})}
